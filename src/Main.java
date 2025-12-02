@@ -22,7 +22,7 @@ public class Main {
         }
         //Задание 3
         int budget = 1000;
-        int day = 1;
+        int day = 0;
         int rate = 100;
         System.out.print("С учетом бюджета в "+budget+" рублей.");
         while (budget > rate) {
@@ -70,19 +70,18 @@ public class Main {
         int charge = 20;
         int minute = 0;
         int overheats = 0;
-        int finalMinutes = 0;
         int finalCharge = 100;
         int finalOverheats = 3;
 
         while (charge < finalCharge) {
-            if (overheats == finalOverheats){
-                break;
-            }
             minute++;
-            finalMinutes++;
             if (minute%10 == 0){
+                charge += 2;
                 overheats++;
-                finalMinutes = minute + 2;
+                if (overheats == finalOverheats){
+                    break;
+                }
+                minute += 2;
                 continue;
             }
             charge += 2;
