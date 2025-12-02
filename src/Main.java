@@ -34,7 +34,6 @@ public class Main {
             day++;
         }
         System.out.print(" Вы можете пользоваться парковкой "+day+" дней");
-
         System.out.println(); //далее реализация с for
 
         int totalDays = 0;
