@@ -3,9 +3,8 @@ public class Main {
         //Задание 1
         int firstFriday = 5;
         for (int i = 1; i <=31; i++) {
-            while (firstFriday <=31) {
-                System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет");
-                firstFriday = firstFriday + 7;
+            if ((i + 7 - firstFriday) % 7 == 0) {
+                System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет");
             }
         }
         //Задание 2
@@ -18,7 +17,7 @@ public class Main {
             System.out.println("Держитесь! Осталось "+result+" метров");
         } while (result > 500);
 
-        for (int i = 41695; i >= 0; i-=500) {
+        for (int i = 42195; i >= 0; i-=500) {
             System.out.println("Держитесь! Осталось "+i+" метров");
         }
         //Задание 3
@@ -57,16 +56,16 @@ public class Main {
         int requiredSavings = 12000000;
         float percent = 1.07f;
         while (true) {
+            if (total >= requiredSavings) {
+                break;
+            }
             month++;
             total+=15000;
             if (month % 6 == 0) {
                 total = (int) (total*percent);
             }
-            if (total >= requiredSavings) {
-                break;
-            }
-            System.out.println("В "+month+" месяце накоплено "+total+" рублей");
         }
+        System.out.println("В "+month+" месяце накоплено "+total+" рублей");
         //Задание 5
         int charge = 20;
         int minute = 0;
