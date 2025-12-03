@@ -63,8 +63,8 @@ public class Main {
             if (month % 6 == 0) {
                 total = (int) (total*percent);
             }
+            System.out.println("В "+month+" месяце накоплено "+total+" рублей");
         }
-        System.out.println("В "+month+" месяце накоплено "+total+" рублей");
         //Задание 5
         int charge = 20;
         int minute = 0;
@@ -75,7 +75,6 @@ public class Main {
         while (charge < finalCharge) {
             minute++;
             if (minute%10 == 0){
-                charge += 2;
                 overheats++;
                 if (overheats == finalOverheats){
                     break;
